@@ -68,6 +68,7 @@ import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import com.google.samples.apps.nowinandroid.core.designsystem.R.drawable
 import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaIconToggleButton
+import com.google.samples.apps.nowinandroid.core.designsystem.component.Tags
 import com.google.samples.apps.nowinandroid.core.designsystem.component.NiaTopicTag
 import com.google.samples.apps.nowinandroid.core.designsystem.icon.NiaIcons
 import com.google.samples.apps.nowinandroid.core.designsystem.theme.NiaTheme
@@ -227,7 +228,11 @@ fun NewsResourceTitle(
     newsResourceTitle: String,
     modifier: Modifier = Modifier,
 ) {
-    Text(newsResourceTitle, style = MaterialTheme.typography.headlineSmall, modifier = modifier)
+    Text(
+        newsResourceTitle,
+        style = MaterialTheme.typography.headlineSmall,
+        modifier = modifier.testTag(Tags.NEWS_TITLE),
+    )
 }
 
 @Composable
@@ -239,7 +244,7 @@ fun BookmarkButton(
     NiaIconToggleButton(
         checked = isBookmarked,
         onCheckedChange = { onClick() },
-        modifier = modifier,
+        modifier = modifier.testTag(Tags.BOOKMARK),
         icon = {
             Icon(
                 imageVector = NiaIcons.BookmarkBorder,
@@ -293,6 +298,7 @@ fun NewsResourceMetaData(
             formattedDate
         },
         style = MaterialTheme.typography.labelSmall,
+        modifier = Modifier.testTag(Tags.NEWS_META_DATA),
     )
 }
 
@@ -300,7 +306,11 @@ fun NewsResourceMetaData(
 fun NewsResourceShortDescription(
     newsResourceShortDescription: String,
 ) {
-    Text(newsResourceShortDescription, style = MaterialTheme.typography.bodyLarge)
+    Text(
+        newsResourceShortDescription,
+        style = MaterialTheme.typography.bodyLarge,
+        modifier = Modifier.testTag(Tags.NEWS_DESCRIPTION),
+    )
 }
 
 @Composable

@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 The Android Open Source Project
+ * Copyright 2026 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.nowinandroid.ui
+package com.google.samples.apps.nowinandroid.core.designsystem.component
 
-import androidx.annotation.StringRes
-import androidx.compose.ui.test.junit4.AndroidComposeTestRule
-import kotlin.properties.ReadOnlyProperty
-
-fun AndroidComposeTestRule<*, *>.stringResource(
-    @StringRes resId: Int,
-): ReadOnlyProperty<Any, String> =
-    ReadOnlyProperty { _, _ -> activity.getString(resId) }
+object Tags {
+    const val IMAGE = "image"
+    const val PLUS_ICON = "plusIcon"
+    const val CHECKED_ICON = "checked_icon"
+    const val TITLE = "title"
+    const val BOOKMARK = "bookmarkButton"
+    const val NEWS_CARD = "newsCard"
+    const val NEWS_TITLE = "newsTitle"
+    const val NEWS_META_DATA = "newsMetaData"
+    const val NEWS_DESCRIPTION = "newsDescription"
+}
